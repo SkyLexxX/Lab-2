@@ -1,5 +1,5 @@
 package ua.lviv.lot.cosmetics.enums;
 
-public enum TypeOfNap {
+public enum NapType {
     LONG, MIDDLE, SHORT
 }

@@ -42,12 +42,13 @@ public class CosmeticsManagerImpl implements CosmeticsManager {
         return null;
     }
 
+    //init
     @Override
-    public void setValues() {
-        cosmetics.add(new Cream("Nivea", 100, TypeOfCosmetic.PROTECTIVE, TypeOfConsistence.EMULSION, Rating.EXCELLENT, 130, true, TypeOfUse.BODY, "Honey"));
-        cosmetics.add(new Toothpaste("Colgate", 150, TypeOfCosmetic.DECORATIVE, TypeOfConsistence.LIQUID, Rating.GREAT, 125, false, "Pineapple"));
-        cosmetics.add(new Mascara("mascaraName", 200, TypeOfCosmetic.HEALING, TypeOfConsistence.PASTE, Rating.GOOD, 100, true, TypeOfNap.LONG, true));
-        cosmetics.add(new Soap("Head&Shoulders", 250, TypeOfCosmetic.HYGIENIC, TypeOfConsistence.SOLID, Rating.GREAT, 200, true, 72, "Apple"));
+    public void init() {
+        cosmetics.add(new Cream("Nivea", 100, CosmeticType.PROTECTIVE, ConsistenceType.EMULSION, Rating.EXCELLENT, 130, true, UseType.BODY, "Honey"));
+        cosmetics.add(new Toothpaste("Colgate", 150, CosmeticType.DECORATIVE, ConsistenceType.LIQUID, Rating.GREAT, 125, false, "Pineapple"));
+        cosmetics.add(new Mascara("mascaraName", 200, CosmeticType.HEALING, ConsistenceType.PASTE, Rating.GOOD, 100, true, NapType.LONG, true));
+        cosmetics.add(new Soap("Head&Shoulders", 250, CosmeticType.HYGIENIC, ConsistenceType.SOLID, Rating.GREAT, 200, true, 72, "Apple"));
     }
 
     @Override

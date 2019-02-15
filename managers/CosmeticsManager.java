@@ -8,6 +8,6 @@ public interface CosmeticsManager {
     List<Cosmetics> sortByVolume(boolean reverser);
     List<Cosmetics> sortByPrice(boolean reverser);
     List<Cosmetics> findByAvailability();
-    void setValues();
+    void init();
     void checkBalance();
 }

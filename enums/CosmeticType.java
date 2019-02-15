@@ -1,5 +1,5 @@
 package ua.lviv.lot.cosmetics.enums;
 
-public enum TypeOfCosmetic {
+public enum CosmeticType {
     HYGIENIC, DECORATIVE, PROTECTIVE, HEALING;
 }
