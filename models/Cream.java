@@ -1,29 +1,26 @@
 package ua.lviv.lot.cosmetics.models;
 
-import ua.lviv.lot.cosmetics.enums.Rating;
-import ua.lviv.lot.cosmetics.enums.TypeOfConsistence;
-import ua.lviv.lot.cosmetics.enums.TypeOfCosmetic;
-import ua.lviv.lot.cosmetics.enums.TypeOfUse;
+import ua.lviv.lot.cosmetics.enums.*;
 
 public class Cream extends Cosmetics {
-    private TypeOfUse typeOfUse;
+    private UseType useType;
     private String extract;
 
     public Cream() {
     }
 
-    public Cream(String name, double price, TypeOfCosmetic typeOfCosmetic, TypeOfConsistence typeOfConsistence, Rating rating, int volume, boolean isAvailable, TypeOfUse typeOfUse, String extract) {
-        super(name, price, typeOfCosmetic, typeOfConsistence, rating, volume, isAvailable);
-        this.typeOfUse = typeOfUse;
+    public Cream(String name, double price, CosmeticType cosmeticType, ConsistenceType consistenceType, Rating rating, int volume, boolean isAvailable, UseType useType, String extract) {
+        super(name, price, cosmeticType, consistenceType, rating, volume, isAvailable);
+        this.useType = useType;
         this.extract = extract;
     }
 
-    public TypeOfUse getTypeOfUse() {
-        return typeOfUse;
+    public UseType getUseType() {
+        return useType;
     }
 
-    public void setTypeOfUse(TypeOfUse typeOfUse) {
-        this.typeOfUse = typeOfUse;
+    public void setUseType(UseType useType) {
+        this.useType = useType;
     }
 
     public String getExtract() {

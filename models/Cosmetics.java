@@ -1,14 +1,12 @@
 package ua.lviv.lot.cosmetics.models;
 
-import ua.lviv.lot.cosmetics.enums.Rating;
-import ua.lviv.lot.cosmetics.enums.TypeOfConsistence;
-import ua.lviv.lot.cosmetics.enums.TypeOfCosmetic;
+import ua.lviv.lot.cosmetics.enums.*;
 
 public class Cosmetics {
     private String name;
     private double price;
-    private TypeOfCosmetic typeOfCosmetic;
-    private TypeOfConsistence typeOfConsistence;
+    private CosmeticType cosmeticType;
+    private ConsistenceType consistenceType;
     private Rating rating;
     private int volume;
     private boolean isAvailable;
@@ -16,11 +14,11 @@ public class Cosmetics {
     public Cosmetics() {
     }
 
-    public Cosmetics(String name, double price, TypeOfCosmetic typeOfCosmetic, TypeOfConsistence typeOfConsistence, Rating rating, int volume, boolean isAvailable) {
+    public Cosmetics(String name, double price, CosmeticType cosmeticType, ConsistenceType consistenceType, Rating rating, int volume, boolean isAvailable) {
         this.name = name;
         this.price = price;
-        this.typeOfCosmetic = typeOfCosmetic;
-        this.typeOfConsistence = typeOfConsistence;
+        this.cosmeticType = cosmeticType;
+        this.consistenceType = consistenceType;
         this.rating = rating;
         this.volume = volume;
         this.isAvailable = isAvailable;
@@ -42,20 +40,20 @@ public class Cosmetics {
         this.price = price;
     }
 
-    public TypeOfCosmetic getTypeOfCosmetic() {
-        return typeOfCosmetic;
+    public CosmeticType getCosmeticType() {
+        return cosmeticType;
     }
 
-    public void setTypeOfCosmetic(TypeOfCosmetic typeOfCosmetic) {
-        this.typeOfCosmetic = typeOfCosmetic;
+    public void setCosmeticType(CosmeticType cosmeticType) {
+        this.cosmeticType = cosmeticType;
     }
 
-    public TypeOfConsistence getTypeOfConsistence() {
-        return typeOfConsistence;
+    public ConsistenceType getConsistenceType() {
+        return consistenceType;
     }
 
-    public void setTypeOfConsistence(TypeOfConsistence typeOfConsistence) {
-        this.typeOfConsistence = typeOfConsistence;
+    public void setConsistenceType(ConsistenceType consistenceType) {
+        this.consistenceType = consistenceType;
     }
 
     public Rating getRating() {

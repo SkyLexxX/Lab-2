@@ -1,5 +1,5 @@
 package ua.lviv.lot.cosmetics.enums;
 
-public enum TypeOfUse {
+public enum UseType {
     FACE, BODY, HANDS;
 }

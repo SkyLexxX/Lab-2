@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         CosmeticsManager one = new CosmeticsManagerImpl();
-        one.setValues();
+        one.init();
         one.sortByVolume(true);
         System.out.println();
         one.sortByPrice(false);

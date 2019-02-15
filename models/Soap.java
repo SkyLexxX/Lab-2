@@ -1,8 +1,6 @@
 package ua.lviv.lot.cosmetics.models;
 
-import ua.lviv.lot.cosmetics.enums.Rating;
-import ua.lviv.lot.cosmetics.enums.TypeOfConsistence;
-import ua.lviv.lot.cosmetics.enums.TypeOfCosmetic;
+import ua.lviv.lot.cosmetics.enums.*;
 
 public class Soap extends Cosmetics {
     private int fatPercentage;
@@ -11,8 +9,8 @@ public class Soap extends Cosmetics {
     public Soap() {
     }
 
-    public Soap(String name, double price, TypeOfCosmetic typeOfCosmetic, TypeOfConsistence typeOfConsistence, Rating rating, int volume, boolean isAvailable, int fatPercentage, String taste) {
-        super(name, price, typeOfCosmetic, typeOfConsistence, rating, volume, isAvailable);
+    public Soap(String name, double price, CosmeticType cosmeticType, ConsistenceType consistenceType, Rating rating, int volume, boolean isAvailable, int fatPercentage, String taste) {
+        super(name, price, cosmeticType, consistenceType, rating, volume, isAvailable);
         this.fatPercentage = fatPercentage;
         this.taste = taste;
     }
