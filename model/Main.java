@@ -1,7 +1,7 @@
-package ua.lviv.lot.cosmetics.models;
+package ua.lviv.lot.cosmetics.model;
 
-import ua.lviv.lot.cosmetics.managers.CosmeticsManager;
-import ua.lviv.lot.cosmetics.managers.CosmeticsManagerImpl;
+import ua.lviv.lot.cosmetics.manager.CosmeticsManager;
+import ua.lviv.lot.cosmetics.manager.CosmeticsManagerImpl;
 
 public class Main {
 
