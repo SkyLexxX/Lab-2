@@ -1,6 +1,6 @@
-package ua.lviv.lot.cosmetics.managers;
+package ua.lviv.lot.cosmetics.manager;
 
-import ua.lviv.lot.cosmetics.models.Cosmetics;
+import ua.lviv.lot.cosmetics.model.Cosmetics;
 
 import java.util.List;
 

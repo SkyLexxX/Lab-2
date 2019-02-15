@@ -1,4 +1,4 @@
-package ua.lviv.lot.cosmetics.models;
+package ua.lviv.lot.cosmetics.model;
 
 import ua.lviv.lot.cosmetics.enums.*;
 

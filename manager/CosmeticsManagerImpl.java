@@ -1,7 +1,7 @@
-package ua.lviv.lot.cosmetics.managers;
+package ua.lviv.lot.cosmetics.manager;
 
 import ua.lviv.lot.cosmetics.enums.*;
-import ua.lviv.lot.cosmetics.models.*;
+import ua.lviv.lot.cosmetics.model.*;
 import java.util.ArrayList;
 import java.util.List;
 
