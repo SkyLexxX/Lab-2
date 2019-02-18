@@ -11,8 +11,17 @@ public class Soap extends Cosmetics {
     public Soap() {
     }
 
-    public Soap(final String name, final double price, final CosmeticType cosmeticType, final ConsistenceType consistenceType, final Rating rating, final int volume, final boolean isAvailable, final int fatPercentage, final String taste) {
-        super(name, price, cosmeticType, consistenceType, rating, volume, isAvailable);
+    public Soap(final String name,
+                final double price,
+                final CosmeticType cosmeticType,
+                final ConsistenceType consistenceType,
+                final Rating rating,
+                final int volume,
+                final boolean isAvailable,
+                final int fatPercentage,
+                final String taste) {
+        super(name, price, cosmeticType, consistenceType,
+                rating, volume, isAvailable);
         this.fatPercentage = fatPercentage;
         this.taste = taste;
     }

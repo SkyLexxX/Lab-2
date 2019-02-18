@@ -10,12 +10,13 @@ import ua.lviv.lot.cosmetics.model.Cream;
 import ua.lviv.lot.cosmetics.model.Mascara;
 import ua.lviv.lot.cosmetics.model.Soap;
 import ua.lviv.lot.cosmetics.model.Toothpaste;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CosmeticsManagerImpl implements CosmeticsManager {
     private List<Cosmetics> cosmetics = new ArrayList<>();
-    private double customerBalance = 0;
+    private double customerBalance;
 
     public CosmeticsManagerImpl() {
     }
@@ -29,44 +30,57 @@ public class CosmeticsManagerImpl implements CosmeticsManager {
     }
 
     @Override
-    public void sortByVolume(final boolean reverser) {
-        int reverse = (reverser) ? 1: -1;
-        cosmetics.sort((Cosmetics o1, Cosmetics o2)->(reverse * o1.getVolume()-o2.getVolume()));
-        cosmetics.forEach((Cosmetics)->System.out.println(Cosmetics.getVolume()));
+    public void sortByVolume(final boolean sortOrder) {
+        int order = (sortOrder) ? 1 : -1;
+        cosmetics.sort((Cosmetics o1, Cosmetics o2) ->
+                (order * o1.getVolume() - o2.getVolume()));
+        cosmetics.forEach((Cosmetics) ->
+                System.out.println(Cosmetics.getVolume()));
     }
 
     @Override
-    public void sortByPrice(final boolean reverser) {
-        int reverse = (reverser) ? 1: -1;
-        cosmetics.sort((Cosmetics o1, Cosmetics o2)-> (int) (reverse * (o1.getPrice()-o2.getPrice())));
-        cosmetics.forEach((Cosmetics)->System.out.println(Cosmetics.getPrice()));
+    public void sortByPrice(final boolean sortOrder) {
+        int order = (sortOrder) ? 1 : -1;
+        cosmetics.sort((Cosmetics o1, Cosmetics o2) ->
+                (int) (order * (o1.getPrice() - o2.getPrice())));
+        cosmetics.forEach((Cosmetics) ->
+                System.out.println(Cosmetics.getPrice()));
     }
 
     @Override
     public void findByAvailability() {
-        cosmetics.stream().filter(Cosmetics::isAvailable).forEach(cosmetics1 -> System.out.println(cosmetics1.getName()));
+        cosmetics.stream().filter(Cosmetics::isAvailable).forEach(cosmetics1 ->
+                System.out.println(cosmetics1.getName()));
     }
 
     @Override
     public void init() {
-        cosmetics.add(new Cream("Nivea", 100, CosmeticType.PROTECTIVE, ConsistenceType.EMULSION, Rating.EXCELLENT, 130, true, UseType.BODY, "Honey"));
-        cosmetics.add(new Toothpaste("Colgate", 150, CosmeticType.DECORATIVE, ConsistenceType.LIQUID, Rating.GREAT, 125, false, "Pineapple"));
-        cosmetics.add(new Mascara("mascaraName", 200, CosmeticType.HEALING, ConsistenceType.PASTE, Rating.GOOD, 100, true, NapType.LONG, true));
-        cosmetics.add(new Soap("Head&Shoulders", 250, CosmeticType.HYGIENIC, ConsistenceType.SOLID, Rating.GREAT, 200, true, 72, "Apple"));
+        cosmetics.add(new Cream("Nivea", 100, CosmeticType.PROTECTIVE,
+                ConsistenceType.EMULSION, Rating.EXCELLENT, 130, true,
+                UseType.BODY, "Honey"));
+        cosmetics.add(new Toothpaste("Colgate", 150, CosmeticType.DECORATIVE,
+                ConsistenceType.LIQUID, Rating.GREAT, 125, false,
+                "Pineapple"));
+        cosmetics.add(new Mascara("mascaraName", 200, CosmeticType.HEALING,
+                ConsistenceType.PASTE, Rating.GOOD, 100, true,
+                NapType.LONG, true));
+        cosmetics.add(new Soap("Head&Shoulders", 250, CosmeticType.HYGIENIC,
+                ConsistenceType.SOLID, Rating.GREAT, 200, true,
+                72, "Apple"));
     }
 
     @Override
     public void checkBalance() {
-        if(customerBalance == 0) {
+        if (customerBalance == 0) {
             System.out.println("Not enough money. Balance = 0 \n");
         }
     }
 
-    public double getCustomerBalance() {
+    public final double getCustomerBalance() {
         return customerBalance;
     }
 
-    public void setCustomerBalance(final double customerBalance) {
+    public final void setCustomerBalance(final double customerBalance) {
         this.customerBalance = customerBalance;
     }
 }

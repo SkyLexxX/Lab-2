@@ -1,9 +1,9 @@
 package ua.lviv.lot.cosmetics.manager;
 
 public interface CosmeticsManager {
-    void sortByVolume(boolean reverser);
+    void sortByVolume(boolean sortOrder);
 
-    void sortByPrice(boolean reverser);
+    void sortByPrice(boolean sortOrder);
 
     void findByAvailability();
 

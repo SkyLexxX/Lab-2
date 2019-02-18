@@ -7,7 +7,7 @@ public final class Main {
     private Main() {
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         CosmeticsManagerImpl one = new CosmeticsManagerImpl();
         one.init();
         one.sortByVolume(true);

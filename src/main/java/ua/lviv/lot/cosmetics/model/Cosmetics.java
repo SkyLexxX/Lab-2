@@ -16,7 +16,13 @@ public class Cosmetics {
     public Cosmetics() {
     }
 
-    public Cosmetics(final String name, final double price, final CosmeticType cosmeticType, final ConsistenceType consistenceType, final Rating rating, final int volume, final boolean isAvailable) {
+    public Cosmetics(final String name,
+                     final double price,
+                     final CosmeticType cosmeticType,
+                     final ConsistenceType consistenceType,
+                     final Rating rating,
+                     final int volume,
+                     final boolean isAvailable) {
         this.name = name;
         this.price = price;
         this.cosmeticType = cosmeticType;
@@ -54,7 +60,8 @@ public class Cosmetics {
         return consistenceType;
     }
 
-    public final void setConsistenceType(final ConsistenceType consistenceType) {
+    public final void setConsistenceType(
+            final ConsistenceType consistenceType) {
         this.consistenceType = consistenceType;
     }
 

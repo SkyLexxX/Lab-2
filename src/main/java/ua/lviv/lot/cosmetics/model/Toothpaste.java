@@ -10,8 +10,16 @@ public class Toothpaste extends Cosmetics {
     public Toothpaste() {
     }
 
-    public Toothpaste(final String name, final double price, final CosmeticType cosmeticType, final ConsistenceType consistenceType, final Rating rating, final int volume, final boolean isAvailable, final String extract) {
-        super(name, price, cosmeticType, consistenceType, rating, volume, isAvailable);
+    public Toothpaste(final String name,
+                      final double price,
+                      final CosmeticType cosmeticType,
+                      final ConsistenceType consistenceType,
+                      final Rating rating,
+                      final int volume,
+                      final boolean isAvailable,
+                      final String extract) {
+        super(name, price, cosmeticType, consistenceType,
+                rating, volume, isAvailable);
         this.extract = extract;
     }
 

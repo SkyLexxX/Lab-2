@@ -12,8 +12,17 @@ public class Cream extends Cosmetics {
     public Cream() {
     }
 
-    public Cream(final String name, final double price, final CosmeticType cosmeticType, final ConsistenceType consistenceType, final Rating rating, final int volume, final boolean isAvailable, final UseType useType, final String extract) {
-        super(name, price, cosmeticType, consistenceType, rating, volume, isAvailable);
+    public Cream(final String name,
+                 final double price,
+                 final CosmeticType cosmeticType,
+                 final ConsistenceType consistenceType,
+                 final Rating rating,
+                 final int volume,
+                 final boolean isAvailable,
+                 final UseType useType,
+                 final String extract) {
+        super(name, price, cosmeticType, consistenceType,
+                rating, volume, isAvailable);
         this.useType = useType;
         this.extract = extract;
     }

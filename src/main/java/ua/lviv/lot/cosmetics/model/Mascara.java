@@ -12,8 +12,17 @@ public class Mascara extends Cosmetics {
     public Mascara() {
     }
 
-    public Mascara(final String name, final double price, final CosmeticType cosmeticType, final ConsistenceType consistenceType, final Rating rating, final int volume, final boolean isAvailable, final NapType napType, final boolean isSoluble) {
-        super(name, price, cosmeticType, consistenceType, rating, volume, isAvailable);
+    public Mascara(final String name,
+                   final double price,
+                   final CosmeticType cosmeticType,
+                   final ConsistenceType consistenceType,
+                   final Rating rating,
+                   final int volume,
+                   final boolean isAvailable,
+                   final NapType napType,
+                   final boolean isSoluble) {
+        super(name, price, cosmeticType, consistenceType,
+                rating, volume, isAvailable);
         this.napType = napType;
         this.isSoluble = isSoluble;
     }
