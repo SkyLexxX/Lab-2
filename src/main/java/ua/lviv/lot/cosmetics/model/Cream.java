@@ -27,6 +27,17 @@ public class Cream extends Cosmetics {
         this.extract = extract;
     }
 
+    public String getHeaders() {
+        return super.getHeaders() + ", useType"
+                + ", extract";
+    }
+
+    public String toCSV() {
+        return super.toCSV()
+                + ", " + useType
+                + ", " + extract;
+    }
+
     public final UseType getUseType() {
         return useType;
     }

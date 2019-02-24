@@ -32,6 +32,26 @@ public class Cosmetics {
         this.isAvailable = isAvailable;
     }
 
+    public String getHeaders() {
+        return "name"
+                + ", price"
+                + ", cosmeticType"
+                + ", consistenceType"
+                + ", rating"
+                + ", volume"
+                + ", isAvailable";
+    }
+
+    public String toCSV() {
+        return name
+                + ", " + price
+                + ", " + cosmeticType
+                + ", " + consistenceType
+                + ", " + rating
+                + ", " + volume
+                + ", " + isAvailable;
+    }
+
     public final String getName() {
         return name;
     }

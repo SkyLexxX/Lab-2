@@ -27,6 +27,17 @@ public class Mascara extends Cosmetics {
         this.isSoluble = isSoluble;
     }
 
+    public String getHeaders() {
+        return super.getHeaders() + ", napType"
+                + ", isSoluble";
+    }
+
+    public String toCSV() {
+        return super.toCSV()
+                + ", " + napType
+                + ", " + isSoluble;
+    }
+
     public final NapType getNapType() {
         return napType;
     }

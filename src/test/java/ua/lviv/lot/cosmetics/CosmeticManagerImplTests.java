@@ -2,15 +2,23 @@ package ua.lviv.lot.cosmetics;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import ua.lviv.lot.cosmetics.enums.*;
+import ua.lviv.lot.cosmetics.enums.ConsistenceType;
+import ua.lviv.lot.cosmetics.enums.CosmeticType;
+import ua.lviv.lot.cosmetics.enums.Rating;
+import ua.lviv.lot.cosmetics.enums.UseType;
+import ua.lviv.lot.cosmetics.enums.NapType;
 import ua.lviv.lot.cosmetics.manager.CosmeticsManager;
 import ua.lviv.lot.cosmetics.manager.CosmeticsManagerImpl;
-import ua.lviv.lot.cosmetics.model.*;
+import ua.lviv.lot.cosmetics.model.Cream;
+import ua.lviv.lot.cosmetics.model.Mascara;
+import ua.lviv.lot.cosmetics.model.Soap;
+import ua.lviv.lot.cosmetics.model.Toothpaste;
+import ua.lviv.lot.cosmetics.model.Cosmetics;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CosmeticManagerImplTests {
 
@@ -78,22 +86,22 @@ public class CosmeticManagerImplTests {
 
     @Test
     void testSortByVolumeInDescendingOrder() {
-        List<Cosmetics> result = cosmeticsManager.sortByPrice(false);
+        List<Cosmetics> result = cosmeticsManager.sortByVolume(true);
 
         for (int i = 0; i < result.size(); i++) {
             if (i == 0) continue;
-            assertTrue(result.get(i - 1).getPrice() > result.get(i).getPrice(),
-                    "SortByVolume() doesn't work properly");
+            assertTrue(result.get(i - 1).getVolume() < result.get(i).getVolume(),
+                    "sortByVolume() doesn't work properly");
         }
     }
 
     @Test
     void testSortByVolumeInAscendingOrder() {
-        List<Cosmetics> result = cosmeticsManager.sortByPrice(true);
+        List<Cosmetics> result = cosmeticsManager.sortByVolume(true);
 
         for (int i = 0; i < result.size(); i++) {
             if (i == 0) continue;
-            assertTrue(result.get(i - 1).getPrice() < result.get(i).getPrice(),
+            assertTrue(result.get(i - 1).getVolume() < result.get(i).getVolume(),
                     "SortByVolume() doesn't work properly");
         }
     }

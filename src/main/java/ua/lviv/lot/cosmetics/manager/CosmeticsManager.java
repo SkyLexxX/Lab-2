@@ -13,5 +13,7 @@ public interface CosmeticsManager {
 
     String checkBalance();
 
+    void init();
+
     void addCosmetic(Cosmetics cosmetics);
 }
