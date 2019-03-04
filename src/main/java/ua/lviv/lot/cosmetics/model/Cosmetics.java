@@ -10,7 +10,7 @@ public class Cosmetics {
     private CosmeticType cosmeticType;
     private ConsistenceType consistenceType;
     private Rating rating;
-    private int volume;
+    private double volume;
     private boolean isAvailable;
 
     public Cosmetics() {
@@ -93,11 +93,11 @@ public class Cosmetics {
         this.rating = rating;
     }
 
-    public final int getVolume() {
+    public final double getVolume() {
         return volume;
     }
 
-    public final void setVolume(final int volume) {
+    public final void setVolume(final double volume) {
         this.volume = volume;
     }
 
