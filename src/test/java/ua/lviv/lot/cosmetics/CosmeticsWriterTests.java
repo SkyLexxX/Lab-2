@@ -50,6 +50,10 @@ public class CosmeticsWriterTests {
         CosmeticsWriter writer = new CosmeticsWriter();
         writer.writeToFile(cosmetics);
 
+        File myFile = new File("result.csv");
+        assertTrue(myFile.exists() && myFile.isFile(),
+                "Initialization file problem");
+
         try (FileInputStream fis = new FileInputStream("result.csv");
              InputStreamReader isr = new InputStreamReader(fis);
              BufferedReader bufReader = new BufferedReader(isr)) {
@@ -62,12 +66,5 @@ public class CosmeticsWriterTests {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    @Test
-    void isFileAvailable(){
-        File myFile = new File("result.csv");
-        assertTrue(myFile.exists() && myFile.isFile(),
-                "Initialization file problem");
     }
 }
