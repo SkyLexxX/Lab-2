@@ -58,8 +58,7 @@ public class CosmeticManagerImplTests {
     void testSortByPriceInDescendingOrder() {
         List<Cosmetics> result = cosmeticsManager.sortByPrice(false);
 
-        for (int i = 0; i < result.size(); i++) {
-            if (i == 0) continue;
+        for (int i = 1; i < result.size(); i++) {
             assertTrue(result.get(i - 1).getPrice() > result.get(i).getPrice(),
                     "SortByPrice() doesn't work properly");
         }
@@ -69,8 +68,7 @@ public class CosmeticManagerImplTests {
     void testSortByPriceInAscendingOrder() {
         List<Cosmetics> result = cosmeticsManager.sortByPrice(true);
 
-        for (int i = 0; i < result.size(); i++) {
-            if (i == 0) continue;
+        for (int i = 1; i < result.size(); i++) {
             assertTrue(result.get(i - 1).getPrice() < result.get(i).getPrice(),
                     "SortByPrice() doesn't work properly");
         }
@@ -78,10 +76,9 @@ public class CosmeticManagerImplTests {
 
     @Test
     void testSortByVolumeInDescendingOrder() {
-        List<Cosmetics> result = cosmeticsManager.sortByPrice(false);
+        List<Cosmetics> result = cosmeticsManager.sortByVolume(false);
 
-        for (int i = 0; i < result.size(); i++) {
-            if (i == 0) continue;
+        for (int i = 1; i < result.size(); i++) {
             assertTrue(result.get(i - 1).getPrice() > result.get(i).getPrice(),
                     "SortByVolume() doesn't work properly");
         }
@@ -91,8 +88,7 @@ public class CosmeticManagerImplTests {
     void testSortByVolumeInAscendingOrder() {
         List<Cosmetics> result = cosmeticsManager.sortByPrice(true);
 
-        for (int i = 0; i < result.size(); i++) {
-            if (i == 0) continue;
+        for (int i = 1; i < result.size(); i++) {
             assertTrue(result.get(i - 1).getPrice() < result.get(i).getPrice(),
                     "SortByVolume() doesn't work properly");
         }
