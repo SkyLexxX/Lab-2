@@ -6,8 +6,12 @@ import java.util.List;
 
 public interface CosmeticsManager {
     List<Cosmetics> sortByVolume(boolean reverser);
+
     List<Cosmetics> sortByPrice(boolean reverser);
+
     List<Cosmetics> findByAvailability();
-    void init();
-    void checkBalance();
+
+    String checkBalance();
+
+    void addCosmetic(Cosmetics cosmetics);
 }
