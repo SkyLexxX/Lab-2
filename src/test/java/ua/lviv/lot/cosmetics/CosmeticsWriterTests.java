@@ -21,8 +21,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class CosmeticsWriterTests {
@@ -47,14 +46,14 @@ public class CosmeticsWriterTests {
 
     @Test
     void testWriteToFile() {
-        CosmeticsWriter writer = new CosmeticsWriter();
-        writer.writeToFile(cosmetics);
-
         File myFile = new File("result.csv");
         assertTrue(myFile.exists() && myFile.isFile(),
                 "Initialization file problem");
 
-        try (FileInputStream fis = new FileInputStream("result.csv");
+        CosmeticsWriter writer = new CosmeticsWriter();
+        writer.writeToFile(cosmetics);
+
+        try (FileInputStream fis = new FileInputStream(myFile);
              InputStreamReader isr = new InputStreamReader(fis);
              BufferedReader bufReader = new BufferedReader(isr)) {
 

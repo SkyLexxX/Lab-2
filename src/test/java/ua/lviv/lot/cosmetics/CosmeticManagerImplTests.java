@@ -29,7 +29,7 @@ public class CosmeticManagerImplTests {
     private CosmeticsManager cosmeticsManager;
 
     @BeforeEach
-    public void setUp() {
+    public void init() {
         cosmeticsManager = new CosmeticsManagerImpl();
         cosmeticsManager.addCosmetic(new Cream("Nivea", 10, CosmeticType.PROTECTIVE,
                 ConsistenceType.EMULSION, Rating.EXCELLENT, 130, true,
@@ -70,8 +70,7 @@ public class CosmeticManagerImplTests {
     void testSortByPriceInDescendingOrder() {
         List<Cosmetics> result = cosmeticsManager.sortByPrice(false);
 
-        for (int i = 0; i < result.size(); i++) {
-            if (i == 0) continue;
+        for (int i = 1; i < result.size(); i++) {
             assertTrue(result.get(i - 1).getPrice() > result.get(i).getPrice(),
                     "SortByPrice() doesn't work correctly");
         }
@@ -81,8 +80,7 @@ public class CosmeticManagerImplTests {
     void testSortByPriceInAscendingOrder() {
         List<Cosmetics> result = cosmeticsManager.sortByPrice(true);
 
-        for (int i = 0; i < result.size(); i++) {
-            if (i == 0) continue;
+        for (int i = 1; i < result.size(); i++) {
             assertTrue(result.get(i - 1).getPrice() < result.get(i).getPrice(),
                     "SortByPrice() doesn't work correctly");
         }
@@ -92,8 +90,7 @@ public class CosmeticManagerImplTests {
     void testSortByVolumeInDescendingOrder() {
         List<Cosmetics> result = cosmeticsManager.sortByVolume(false);
 
-        for (int i = 0; i < result.size(); i++) {
-            if (i == 0) continue;
+        for (int i = 1; i < result.size(); i++) {
             assertTrue(result.get(i - 1).getVolume() > result.get(i).getVolume(),
                     "sortByVolume() doesn't work correctly");
         }
@@ -103,8 +100,7 @@ public class CosmeticManagerImplTests {
     void testSortByVolumeInAscendingOrder() {
         List<Cosmetics> result = cosmeticsManager.sortByVolume(true);
 
-        for (int i = 0; i < result.size(); i++) {
-            if (i == 0) continue;
+        for (int i = 1; i < result.size(); i++) {
             assertTrue(result.get(i - 1).getVolume() < result.get(i).getVolume(),
                     "SortByVolume() doesn't work correctly");
         }
