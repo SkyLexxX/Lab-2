@@ -4,13 +4,19 @@ import ua.lviv.lot.cosmetics.enums.Rating;
 import ua.lviv.lot.cosmetics.enums.ConsistenceType;
 import ua.lviv.lot.cosmetics.enums.CosmeticType;
 
+import javax.persistence.*;
+
+@Entity
 public class Cosmetics {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private String name;
     private double price;
     private CosmeticType cosmeticType;
     private ConsistenceType consistenceType;
     private Rating rating;
-    private int volume;
+    private double volume;
     private boolean isAvailable;
 
     public Cosmetics() {
@@ -32,60 +38,101 @@ public class Cosmetics {
         this.isAvailable = isAvailable;
     }
 
-    public final String getName() {
+    public String getHeaders() {
+        return "name"
+                + ", price"
+                + ", cosmeticType"
+                + ", consistenceType"
+                + ", rating"
+                + ", volume"
+                + ", isAvailable";
+    }
+
+    public String toCSV() {
+        return name
+                + ", " + price
+                + ", " + cosmeticType
+                + ", " + consistenceType
+                + ", " + rating
+                + ", " + volume
+                + ", " + isAvailable;
+    }
+
+    @Override
+    public String toString() {
+        return "Cosmetics{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", cosmeticType=" + cosmeticType +
+                ", consistenceType=" + consistenceType +
+                ", rating=" + rating +
+                ", volume=" + volume +
+                ", isAvailable=" + isAvailable +
+                '}';
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
         return name;
     }
 
-    public final void setName(final String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public final double getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public final void setPrice(final double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public final CosmeticType getCosmeticType() {
+    public CosmeticType getCosmeticType() {
         return cosmeticType;
     }
 
-    public final void setCosmeticType(final CosmeticType cosmeticType) {
+    public void setCosmeticType(CosmeticType cosmeticType) {
         this.cosmeticType = cosmeticType;
     }
 
-    public final ConsistenceType getConsistenceType() {
+    public ConsistenceType getConsistenceType() {
         return consistenceType;
     }
 
-    public final void setConsistenceType(
-            final ConsistenceType consistenceType) {
+    public void setConsistenceType(ConsistenceType consistenceType) {
         this.consistenceType = consistenceType;
     }
 
-    public final Rating getRating() {
+    public Rating getRating() {
         return rating;
     }
 
-    public final void setRating(final Rating rating) {
+    public void setRating(Rating rating) {
         this.rating = rating;
     }
 
-    public final int getVolume() {
+    public double getVolume() {
         return volume;
     }
 
-    public final void setVolume(final int volume) {
+    public void setVolume(double volume) {
         this.volume = volume;
     }
 
-    public final boolean isAvailable() {
+    public boolean isAvailable() {
         return isAvailable;
     }
 
-    public final void setAvailable(final boolean available) {
+    public void setAvailable(boolean available) {
         isAvailable = available;
     }
 }

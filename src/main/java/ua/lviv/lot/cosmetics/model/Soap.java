@@ -26,6 +26,25 @@ public class Soap extends Cosmetics {
         this.taste = taste;
     }
 
+    public String getHeaders() {
+        return super.getHeaders() + ", fatPercentage"
+                + ", taste";
+    }
+
+    public String toCSV() {
+        return super.toCSV()
+                + ", " + fatPercentage
+                + ", " + taste;
+    }
+
+    @Override
+    public String toString() {
+        return "Soap{" +
+                "fatPercentage=" + fatPercentage +
+                ", taste='" + taste + '\'' +
+                '}';
+    }
+
     public final int getFatPercentage() {
         return fatPercentage;
     }

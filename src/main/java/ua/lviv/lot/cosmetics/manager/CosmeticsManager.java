@@ -1,13 +1,17 @@
 package ua.lviv.lot.cosmetics.manager;
 
+import ua.lviv.lot.cosmetics.model.Cosmetics;
+
+import java.util.List;
+
 public interface CosmeticsManager {
-    void sortByVolume(boolean sortOrder);
+    List<Cosmetics> sortByVolume(boolean reverser);
 
-    void sortByPrice(boolean sortOrder);
+    List<Cosmetics> sortByPrice(boolean reverser);
 
-    void findByAvailability();
+    List<Cosmetics> findByAvailability();
 
-    void init();
+    String checkBalance();
 
-    void checkBalance();
+    void addCosmetic(Cosmetics cosmetics);
 }

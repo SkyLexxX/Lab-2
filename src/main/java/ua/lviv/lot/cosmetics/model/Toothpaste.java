@@ -23,6 +23,22 @@ public class Toothpaste extends Cosmetics {
         this.extract = extract;
     }
 
+    public String getHeaders() {
+        return super.getHeaders() + ", extract";
+    }
+
+    public String toCSV() {
+        return super.toCSV()
+                + ", " + extract;
+    }
+
+    @Override
+    public String toString() {
+        return "Toothpaste{" +
+                "extract='" + extract + '\'' +
+                '}';
+    }
+
     public final String getExtract() {
         return extract;
     }

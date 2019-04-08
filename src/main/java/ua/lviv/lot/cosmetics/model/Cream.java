@@ -5,7 +5,15 @@ import ua.lviv.lot.cosmetics.enums.ConsistenceType;
 import ua.lviv.lot.cosmetics.enums.CosmeticType;
 import ua.lviv.lot.cosmetics.enums.UseType;
 
+import javax.persistence.*;
+
+@Entity
+@Inheritance
 public class Cream extends Cosmetics {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
     private UseType useType;
     private String extract;
 
@@ -27,19 +35,40 @@ public class Cream extends Cosmetics {
         this.extract = extract;
     }
 
-    public final UseType getUseType() {
+    public String getHeaders() {
+        return super.getHeaders() + ", useType"
+                + ", extract";
+    }
+
+    public String toCSV() {
+        return super.toCSV()
+                + ", " + useType
+                + ", " + extract;
+    }
+
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public UseType getUseType() {
         return useType;
     }
 
-    public final void setUseType(final UseType useType) {
+    public void setUseType(UseType useType) {
         this.useType = useType;
     }
 
-    public final String getExtract() {
+    public String getExtract() {
         return extract;
     }
 
-    public final void setExtract(final String extract) {
+    public void setExtract(String extract) {
         this.extract = extract;
     }
 }
