@@ -1,10 +1,8 @@
 package ua.lviv.lot.cosmetics.repositories;
 
+import org.springframework.data.repository.CrudRepository;
 import ua.lviv.lot.cosmetics.model.Cream;
 
-import javax.transaction.Transactional;
-
-@Transactional
-public interface CreamRepository extends CosmeticsRepository<Cream>{
+public interface CreamRepository extends CrudRepository<Cream, Integer> {
 
 }

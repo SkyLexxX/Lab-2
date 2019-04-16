@@ -6,10 +6,7 @@ import ua.lviv.lot.cosmetics.enums.CosmeticType;
 
 import javax.persistence.*;
 
-@Entity
 public class Cosmetics {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     private double price;

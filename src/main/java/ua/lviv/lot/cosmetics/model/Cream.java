@@ -8,7 +8,6 @@ import ua.lviv.lot.cosmetics.enums.UseType;
 import javax.persistence.*;
 
 @Entity
-@Inheritance
 public class Cream extends Cosmetics {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,6 +30,11 @@ public class Cream extends Cosmetics {
                  final String extract) {
         super(name, price, cosmeticType, consistenceType,
                 rating, volume, isAvailable);
+        this.useType = useType;
+        this.extract = extract;
+    }
+
+    public Cream(UseType useType, String extract) {
         this.useType = useType;
         this.extract = extract;
     }
